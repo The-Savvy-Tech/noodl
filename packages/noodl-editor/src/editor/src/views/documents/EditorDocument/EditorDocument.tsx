@@ -30,11 +30,12 @@ import { useImportNodeset } from './hooks/UseImportNodeset';
 import { useRoutes } from './hooks/UseRoutes';
 import { useSetupNodeGraph } from './hooks/UseSetupNodeGraph';
 import { TitleBar } from './titlebar';
-import useTimeout from '@noodl-hooks/useTimeout';
 
 type DocumentLayout = 'horizontal' | 'vertical' | 'detachedPreview';
 
 function EditorDocument() {
+  const [viewerEnabled, setViewerEnabled] = useState(true) // Rolder
+
   const titlebarViewInstance = TitleBar.instance;
 
   const { nodeGraph } = useNodeGraphContext();
@@ -437,10 +438,12 @@ function EditorDocument() {
         previewMode={previewMode}
         nodeGraph={nodeGraph}
         deployIsDisabled={ProjectModel.instance.isLesson()}
+        viewerEnabled={viewerEnabled}
+        setViewerEnabled={setViewerEnabled}
       />
       {hasLoadedEditorSettings && (
         <ViewComponent
-          documentLayout={documentLayout}
+          documentLayout={!viewerEnabled ? 'detachedPreview' : documentLayout}  // Rolder          
           canvasViewInstance={canvasView}
           nodeGraphEditorInstance={nodeGraph}
           frameDividerSize={frameDividerSize}
