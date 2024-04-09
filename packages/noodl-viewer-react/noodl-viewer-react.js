@@ -2,8 +2,22 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import NoodlRuntime from '@noodl/runtime';
 
+//import roodlJson from '../../package.json';
+//import libs from '../roodl-libs/src/libs';
 import registerPolyfills from './src/polyfills';
 import Viewer, { ssrSetupRuntime } from './src/viewer.jsx';
+
+// Rolder
+//const urlParams = new URLSearchParams(window.location.search);
+//const d = parseInt(urlParams.get('debug') || '0');
+
+// window.R = {
+//   states: { backend: 'notInitialized', debug: d }
+//   //env: { roodl: roodlJson.version },
+//   //params: {},
+//   //libs
+//   //utils: {}
+// };
 
 registerPolyfills();
 
