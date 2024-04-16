@@ -473,8 +473,8 @@ export function EditorTopbar({
                 UNSAFE_triggerClassName={css.TooltipPositioner}
               >
                 <ToggleSwitch
-                  isChecked={!previewMode}
-                  onChange={(e) => onPreviewModeChanged(e.target.checked)}
+                  isChecked={previewMode}
+                  onChange={(e) => { onPreviewModeChanged(e.target.checked) }}
                   isAlwaysActiveColor
                 />
               </Tooltip>
