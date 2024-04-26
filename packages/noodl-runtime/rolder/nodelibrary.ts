@@ -147,15 +147,5 @@ export default [
         items: ['rolder-kit.nodered', 'rolder-kit.createXlsx']
       }
     ]
-  },
-  {
-    name: 'Rolder Kit - Experiments',
-    type: '',
-    subCategories: [
-      {
-        name: '',
-        items: ['']
-      }
-    ]
-  }
+  }  
 ];
