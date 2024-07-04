@@ -114,6 +114,12 @@ const ImageNode = {
       propPath: 'dom',
       type: 'signal',
       group: 'Events'
+    },
+    onError: {
+      displayName: 'On Error',
+      propPath: 'dom',
+      type: 'signal',
+      group: 'Events'
     }
   }
 };
