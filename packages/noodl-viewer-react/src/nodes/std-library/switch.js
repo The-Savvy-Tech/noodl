@@ -4,7 +4,7 @@ const Switch = {
   name: 'Switch',
   docs: 'https://docs.noodl.net/nodes/logic/switch',
   category: 'Logic',
-  initialize: function () {
+  initialize() {
     this._internal.state = false;
     this._internal.initialized = false;
   },
@@ -15,7 +15,7 @@ const Switch = {
     on: {
       displayName: 'On',
       group: 'Change State',
-      valueChangedToTrue: function () {
+      valueChangedToTrue() {
         if (this._internal.state === true) {
           return;
         }
@@ -27,7 +27,7 @@ const Switch = {
     off: {
       displayName: 'Off',
       group: 'Change State',
-      valueChangedToTrue: function () {
+      valueChangedToTrue() {
         if (this._internal.state === false) {
           return;
         }
@@ -50,7 +50,7 @@ const Switch = {
       displayName: 'State',
       group: 'General',
       default: false,
-      set: function (value) {
+      set(value) {
         this._internal.state = !!value;
         this.flagOutputDirty('state');
         this.emitSignals();
@@ -61,7 +61,7 @@ const Switch = {
     state: {
       type: 'boolean',
       displayName: 'Current State',
-      getter: function () {
+      getter() {
         return this._internal.state;
       }
     },
@@ -77,7 +77,7 @@ const Switch = {
     }
   },
   prototypeExtensions: {
-    emitSignals: function () {
+    emitSignals() {
       if (this._internal.state === true) {
         this.sendSignalOnOutput('switchedToOn');
       } else {
